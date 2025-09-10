@@ -1,0 +1,139 @@
+@import "tailwindcss";
+
+ @custom-variant child (& > *);
+
+
+@custom-variant dark (&:where(.dark, .dark *));
+@custom-variant theme (&.theme &);  
+@custom-variant first-child (& > *:first-child);
+
+
+@theme
+{
+    /* color */
+    --color-brown-100:#ECE0D1;
+    --color-brown-300:#DBC1AC;
+    --color-brown-600:#967259;
+    --color-brown-900:#634832;
+
+    /* shadow */
+    --shadow-light-dark: 0px 1px 10px rgba(0, 0, 0, 0.05);
+
+    /* rounded */
+    --radius-4x1:2rem;
+
+    /* font */
+    --font-Dana-Bold: 'Dana-Bold', sans-serif;
+    --font-Dana-medium: 'Dana-medium', sans-serif;
+    --font-Dana-reg: 'Dana-reg', sans-serif;
+    --font-Morabba-Bold: 'Morabba-Bold', sans-serif;
+    --font-Morabba-medium: 'Morabba-medium', sans-serif;
+    --font-Morabba-reg: 'Morabba-reg', sans-serif;
+    --font-Lahzeh-reg: 'Lahzeh-reg', sans-serif;
+    --tracking-top: -0.065em;
+
+    --spacing-30:120px;
+
+
+
+}
+
+    @font-face {
+  font-family: Lahzeh-reg;
+  font-style: normal;
+  font-weight: 200 700;
+  font-display: swap;
+  src: url("/public/font/Lahzeh-Regular (1).ttf") format("woff2");
+}
+    @font-face {
+  font-family: Dana-Bold;
+  font-style: normal;
+  font-weight: 200 700;
+  font-display: swap;
+  src: url("/public/font/fonts/Dana/woff2/DanaFaNum-DemiBold.woff2") format("woff2");
+}
+    @font-face {
+  font-family: Dana-reg;
+  font-style: normal;
+  font-weight: 200 700;
+  font-display: swap;
+  src: url("/public/font/fonts/Dana/woff2/DanaFaNum-Regular.woff2") format("woff2");
+}
+    @font-face {
+  font-family: Morabba-medium;
+  font-style: normal;
+  font-weight: 200 700;
+  font-display: swap;
+  src: url("/public/font/fonts/Morabba/woff2/Morabba-Medium.woff2") format("woff2");
+}
+    @font-face {
+  font-family: Morabba-reg;
+  font-style: normal;
+  font-weight: 200 700;
+  font-display: swap;
+  src: url("/public/font/fonts/Morabba/woff2/Morabba-Light.woff2") format("woff2");
+}
+    @font-face {
+  font-family: Morabba-Bold;
+  font-style: normal;
+  font-weight: 200 700;
+  font-display: swap;
+  src: url("/public/font/fonts/Morabba/woff2/Morabba-Bold.woff2") format("woff2");
+}
+body
+{
+  background: url('/public/font/img/24_Header-Analyze/headerBgDesktop.png') no-repeat;
+}
+
+@layer components{
+  .submenu
+  {
+    @apply hidden flex-col gap-y-3 pr-7 text-base font-Dana-reg text-zinc-600 dark:text-white mt-3;
+  }
+  .submenu--open
+  {
+    @apply flex
+  }
+  .submenu__item--active
+  {
+    @apply relative pr-2.5 text-orange-300;
+    /* با apply میتونی کار کنی ولی من میخوام با css خالص بنویسم */
+    /* position: relative;
+    padding-right: 10px;
+    color: #fdba74; */
+  }
+  .submenu__item--active::after
+  {
+    content: "";
+    width: 4px;
+    height: 4px;
+    background-color: #fdba74;
+    display: block;
+    border-radius: 100px;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    margin: auto;
+  }
+   /* به این صورت هم میتوانی بنویسی */
+     /* .submenu__item--active::after {
+    @apply content-[''] w-1 h-1 bg-red-500 block rounded-full absolute top-0 bottom-0 right-0 m-auto;
+  } */
+   .overlay
+   {
+    @apply opacity-0 invisible w-full fixed inset-0 bg-black/40 z-10 md:hidden transition-all;
+   }
+   /* modifier تغییر دهنده */
+   .overlay--active
+   {
+    @apply opacity-100 visible;
+   }
+}
+
+
+
+
+
+
+
