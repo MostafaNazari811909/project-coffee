@@ -84,6 +84,10 @@ body
 {
   background: url('/public/font/img/24_Header-Analyze/headerBgDesktop.png') no-repeat;
 }
+.container
+{
+  @apply px-4 lg:px-[10px] text-amber-300 mx-auto bg-amber-600;
+}
 
 @layer components{
   .submenu
@@ -125,7 +129,16 @@ body
     @apply opacity-0 invisible w-full fixed inset-0 bg-black/40 z-10 md:hidden transition-all;
    }
    /* modifier تغییر دهنده */
+   .overlay-p
+   {
+    @apply opacity-0 invisible w-full fixed inset-0 bg-black/40 z-10 md:hidden transition-all;
+   }
+   /* modifier تغییر دهنده */
    .overlay--active
+   {
+    @apply opacity-100 visible;
+   }
+   .overlay--active_p
    {
     @apply opacity-100 visible;
    }
