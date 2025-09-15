@@ -116,6 +116,10 @@
             stroke="currentColor">
             <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
         </symbol>
+        <symbol id="shape" width="100" height="22" viewBox="0 0 100 22" fill="currentColor"
+            xmlns="http://www.w3.org/2000/svg">
+            <path d="M50 0C69 0 81 22 100 22L0 22C18.75 22 31 0 50 0Z" />
+        </symbol>
     </svg>
     <script type="text/javascript">
         // On page load or when changing themes, best to add inline in `head` to avoid FOUC
@@ -133,11 +137,11 @@
     </script>
 </head>
 
-<body class="bg-gray-100 dark:bg-zinc-800">
+<body class="bg-gray-100 dark:bg-zinc-800 h-[4000px]">
 
 
     <header
-        class="fixed hidden top-9 right-0 left-0 bg-black/50 w-[95%] lg:w-[90%] m-auto h-24 rounded-3xl md:flex items-center px-5 lg:px-10 py-5 backdrop-blur-[6px]">
+        class="fixed z-20 hidden top-9 right-0 left-0 bg-black/50 w-[95%] lg:w-[90%] m-auto h-24 rounded-3xl md:flex items-center px-5 lg:px-10 py-5 backdrop-blur-[6px]">
         <div class="flex w-full justify-between items-center">
             <!--logo & menu -->
             <nav class="flex gap-x-5 lg:gap-x-9 items-center h-14">
@@ -295,7 +299,7 @@
         </div>
 
         <div
-            class="nav-mobile overflow-y-auto transition-all bg-white dark:bg-zinc-700 w-64 min-h-screen fixed top-0 left-0 -right-64 z-20 pt-3 px-4">
+            class="nav-mobile overflow-y-auto transition-all bg-white dark:bg-zinc-700 w-64 max-h-screen fixed top-0 left-0 -right-64 z-20 pt-3 px-4">
             <div class="flex items-center justify-between pb-5 border-b border-b-gray-100 dark:border-b-white/10 mb-6">
                 <div class="flex gap-x-3.5">
                     <svg class="w-[41px] h-10 text-orange-300">
@@ -477,7 +481,46 @@
         </div>
 
     </div>
-    <div class="container">asl.kdfj</div>
+
+    <main>
+        <section
+            class="home relative bg-[url('/CoffeeShop-Files/headerBgMobile.webp')] xs:bg-[url('/CoffeeShop-Files/headerBgDesktop.webp')] bg-no-repeat object-cover bg-[center_top] h-[200px] xs:h-auto xs:aspect-[2/1] md:aspect-auto">
+            <div class="relative overflow-hidden container-a flex items-center justify-end md:min-h-screen h-full">
+                <div>
+                    <h2 class="font-Morabba-Bold text-2xl xs:text-3xl md:text-6xl text-white mb-0.5 md:mb-2">قهوه عربیکا
+                        تانزانیا
+                    </h2>
+                    <p class="font-Morabba-reg text-xl xs:text-2xl md:text-5xl text-white">یک فنجان بالانس !</p>
+                    <span class="w-[100px] md:h-0.5 h-px bg-orange-300 block md:my-8 my-3"></span>
+                    <p class="font-Dana-reg text-white text-xs xs:text-sm md:text-2xl md:max-w-[460px] max-w-[201px]">
+                        قطعا نام آشنای عربیکا را شنیده اید، عربیکا یکی از گونه های قهوه است که در نواحی مختلف کمربند
+                        قهوه کشت میشود.</p>
+                </div>
+
+                <svg class="absolute md:inline-block hidden bottom-0 left-0 right-0 mx-auto w-[100px] h-[22px] text-gray-100 dark:text-zinc-800">
+                    <use href="#shape"></use>
+                </svg>
+                <div class="hidden md:flex absolute bottom-0 translate-y-2/4 left-0 right-0 mx-auto w-[203px] h-[203px] border border-white/25 rounded-full items-center justify-center">
+                    <div class="w-[145px] h-[145px] border border-white/50 rounded-full flex justify-center items-center">
+                        <div class="w-[95px] h-[95px] border border-white rounded-full flex items-center justify-center"></div>
+                    </div>
+                </div>
+
+            </div>
+           
+                
+                <div class="cursor-pointer md:flex hidden justify-center items-center absolute bottom-0 translate-y-2/4 left-0 right-0 mx-auto w-[30px] h-[30px] border-2 border-orange-300 rounded-full">
+                    <svg class="h-4 w-4 text-zinc-800 dark:text-white">
+                        <use href="#chevron-down"></use>
+                    </svg>
+                </div>
+                
+       
+
+        </section>
+
+
+    </main>
 
 
 
