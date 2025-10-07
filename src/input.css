@@ -1,6 +1,6 @@
 @import "tailwindcss";
 
- @custom-variant child (& > *);
+@custom-variant child (& > *);
 
 
 @custom-variant dark (&:where(.dark, .dark *));
@@ -31,13 +31,14 @@
     --font-Morabba-reg: 'Morabba-reg', sans-serif;
     --font-Lahzeh-reg: 'Lahzeh-reg', sans-serif;
     --tracking-top: -0.065em;
+    --breakpoint-xs:480px;
 
     --spacing-30:120px;
-
-
-
 }
-
+html {
+  /* scroll-behavior: smooth; */
+  scroll-behavior: smooth;
+}
     @font-face {
   font-family: Lahzeh-reg;
   font-style: normal;
@@ -80,14 +81,55 @@
   font-display: swap;
   src: url("/public/font/fonts/Morabba/woff2/Morabba-Bold.woff2") format("woff2");
 }
-body
+.bg-d
 {
-  background: url('/public/font/img/24_Header-Analyze/headerBgDesktop.png') no-repeat;
+  background-size: auto 100%;
 }
-.container
+
+.container-a
 {
-  @apply px-4 lg:px-[10px] text-amber-300 mx-auto bg-amber-600;
+  @apply px-4 lg:px-[10px] mx-auto;
+    width: 100%;
+    @media (width >= 40rem) {
+      max-width: 40rem;
+    }
+    @media (width >= 48rem) {
+      max-width: 48rem;
+    }
+    @media (width >= 64rem) {
+      max-width: 64rem;
+    }
+    @media (width >= 80rem) {
+      max-width: 80rem;
+    }
 }
+.category-banneer_item-2
+{
+  background-image:linear-gradient(to left, rgba(0, 0, 0, 0.6) 33.85%, rgba(243, 244, 246, 0.1)), url('/CoffeeShop-Files/categories/category-left.jpg');
+  background-size: cover;
+}
+.category-banneer_item-1
+{
+  background-image:linear-gradient(to left, rgba(0, 0, 0, 0.6) 33.85%, rgba(243, 244, 246, 0.1)), url('/CoffeeShop-Files/categories/category-right.jpg');
+  background-size: cover;
+}
+html.dark .product
+{
+  opacity: 1;
+  background: url('/CoffeeShop-Files/products.png') no-repeat center;
+  background-size:100%;
+  height: 100vh;
+}
+@media screen and (min-width: 1024px) {
+  .product
+{
+  background: url('/CoffeeShop-Files/products-3.png') no-repeat center;
+  background-size:100%;
+  height: 100vh;
+  }
+}
+
+
 
 @layer components{
   .submenu
@@ -142,6 +184,34 @@ body
    {
     @apply opacity-100 visible;
    }
+   .title-setion
+   {
+    @apply lg:pt-48 pt-8 md:pt-24 flex justify-between md:mb-12 mb-5;
+   }
+ 
+   .title-subtitle
+   {
+    @apply flex flex-col gap-y-0.5 md:gap-y-1.5 text-gray-700 dark:text-white;
+   }
+   .select-product
+   {
+    @apply flex items-center gap-x-0.5 md:gap-x-1 md:hover:bg-orange-300/20 md:pl-1 md:pr-3 md:py-1.5 md:rounded-[6px];
+   }
+   .offer
+   {
+    @apply text-gray-400 relative;
+   }
+   .offer::after
+   {
+    content: "";
+    width: 100%;
+    height: 1px;
+    background-color: #ef4444;
+    position: absolute;
+    inset: 0;
+    margin: auto;
+   }
+ 
 }
 
 

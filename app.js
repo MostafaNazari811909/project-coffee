@@ -99,7 +99,7 @@ Nav.classList.add("-right-64");
 CloseProduct.addEventListener("click", function(){
 Cart.classList.add("-left-64");
     Cart.classList.remove("left-0");
-    Overlay.classList.remove("overlay--active_p");
+    Overlay.classList.remove("overlay--active");
 });
 
 OpenProduct.addEventListener("click", function() {
