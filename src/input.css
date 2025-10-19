@@ -113,6 +113,19 @@ html {
   background-image:linear-gradient(to left, rgba(0, 0, 0, 0.6) 33.85%, rgba(243, 244, 246, 0.1)), url('/CoffeeShop-Files/categories/category-right.jpg');
   background-size: cover;
 }
+.club
+{
+    background-image:linear-gradient(to right, rgba(16, 185, 129, 1) , rgba(5, 150, 105, 1));
+
+}
+.gift
+{
+    background-image:linear-gradient(to left, rgba(253, 186, 116, 1) , rgba(254, 215, 170, 1));
+}
+.hover--blog
+{
+    background-image:linear-gradient(to left, rgba(253, 186, 116, 1) , rgba(254, 215, 170, 1));
+}
 html.dark .product
 {
   opacity: 1;
